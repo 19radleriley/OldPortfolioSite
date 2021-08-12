@@ -1,0 +1,69 @@
+* {
+    padding: none;
+    margin: none;
+    box-sizing: border-box;
+}
+
+body {
+    width: 70%;
+    margin: auto;
+    background-color: #f5f7fb;    
+}
+
+.container > div {
+    margin: 2em;
+}
+
+/* Header */
+
+.illustration {
+    height: 100vh;
+}
+
+/* About me section */
+
+.about {
+    display: grid;
+    grid-template-columns: 20% 1fr 20%;
+}
+
+.information {
+    display: flex;
+    grid-column: 2/3;
+}
+
+.img-col {
+    max-width: 40%;
+}
+
+/* Skills section */
+
+
+/* Recent work section */
+
+.recent {
+    text-align: center;
+}
+
+.recent > div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 2em;
+    background-color: white;
+    border-radius: .5em;
+}
+
+.ttt {
+
+}
+
+.artstore {
+
+}
+
+.simulation {
+
+}
+
+
+/* Footer */

@@ -1,24 +1,96 @@
+<!-- style="border: 1px solid purple" -->
 <html>
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Link in Bootstrap 5 -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" 
+            integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+        <link rel="stylesheet" href="./styles.css">
 
         <title>
             Riley Radle
         </title>
     </head>
 
-    <body style="background-image: url('images/Concept.jpg'); color: white; text-align: center;">
-        <style>
-            a {
-                color: white;
-            }
-        </style>
+    <body>
+        <div class="container">
+            <ul class="nav justify-content-end">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">GitHub</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">ArtStation</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Contact</a>
+                </li>
+              </ul>
+    
+            <div class="illustration">
+                <img src="" alt="">
+                <h1>Life's a Journey</h1>
+                <h2>Here's Mine</h2>
+            </div>
 
-        <h1>Welcome to my Personal Website!</h1>
-        <a href="https://github.com/19radleriley">My GitHub</a><br>
-        <a href="https://github.com/19radleriley/ArtSite-SourceCode">ArtSite Repo</a><br>
-        <a href="https://github.com/19radleriley/Unbeatable-Tic-Tac-Toe">Tic Tac Toe Repo</a><br>
-        <a href="https://github.com/19radleriley/AutoBodyShopSimulation">Auto Body Shop Simulation Repo</a><br>
+            <div class="about">
+    
+                <div class="information">
+                    <div class="img-col">
+                        <img class="img-fluid" src="images/pictureofme.jpeg" alt="Picture of Me">
+
+                    </div>
+                    <div class="text-col">
+                        <h1>About Me</h1>
+                        <p>
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab dolores ratione rerum 
+                            temporibus magni, aut iure quo voluptatem ea. Enim repellendus, unde cupiditate assumenda
+                            facilis omnis illo officiis laudantium quia.
+                        </p>
+                    </div>
+                
+                </div>
+            </div>
+
+            <div class="skills">
+                <!-- Lay these out in an interesting way -->
+                <h1>What Do I Know?</h1>
+                <ul>
+                    <li>Java</li>
+                    <li>Python</li>
+                    <li>C</li>
+                    <li>Photoshop</li>
+                    <li>Illustration</li>
+                </ul>
+            </div>
+
+            <div class="recent">
+                <h1>Recent Work</h1>
+                <div class="ttt" >
+                    <div><h3>Tic Tac Toe</h3></div>
+                    <div><img src="images/temp.jpg" alt="" class="img-fluid"></div>
+                </div>
+                <div class="artstore">
+                    <div><img src="images/temp.jpg" alt="" class="img-fluid"></div>
+                    <div><h3>Art Store</h3></div>
+                </div>
+                <div class="simulation">
+                    <div><h3>Simulation</h3> </div>
+                    <div><img src="images/temp.jpg" alt="" class="img-fluid"></div>
+                </div>
+            </div>
+        </div>
+
+           
     </body>
+
+    <footer style="border: 1px solid blue; text-align: center;">
+        <a href="#">Contact</a>
+        <a href="#">GitHub</a>
+        <a href="#">ArtStation</a>
+    </footer>
 </html>
