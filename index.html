@@ -4,93 +4,114 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <!-- Link in Bootstrap 5 -->
+        <!-- Link in Bootstrap 5 and Custom CSS -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" 
             integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
-        <link rel="stylesheet" href="./styles.css">
+        <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+        <!-- <link rel="stylesheet" href="./styles.css"> -->
 
         <title>
-            Riley Radle
+            My Portfolio Site
         </title>
     </head>
 
     <body>
         <div class="container">
-            <ul class="nav justify-content-end">
-                <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="#">Home</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">GitHub</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">ArtStation</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Contact</a>
-                </li>
-              </ul>
-    
-            <div class="illustration">
-                <img src="" alt="">
-                <h1>Life's a Journey</h1>
-                <h2>Here's Mine</h2>
-            </div>
-
-            <div class="about">
-    
-                <div class="information">
-                    <div class="img-col">
-                        <img class="img-fluid" src="images/pictureofme.jpeg" alt="Picture of Me">
-
-                    </div>
-                    <div class="text-col">
-                        <h1>About Me</h1>
-                        <p>
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab dolores ratione rerum 
-                            temporibus magni, aut iure quo voluptatem ea. Enim repellendus, unde cupiditate assumenda
-                            facilis omnis illo officiis laudantium quia.
-                        </p>
-                    </div>
-                
-                </div>
-            </div>
-
-            <div class="skills">
-                <!-- Lay these out in an interesting way -->
-                <h1>What Do I Know?</h1>
-                <ul>
-                    <li>Java</li>
-                    <li>Python</li>
-                    <li>C</li>
-                    <li>Photoshop</li>
-                    <li>Illustration</li>
+            <nav>
+                <ul class="nav justify-content-end">
+                    <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="https://github.com/19radleriley">GitHub</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="https://www.artstation.com/radle2279">ArtStation</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                    </li>
                 </ul>
-            </div>
-
-            <div class="recent">
-                <h1>Recent Work</h1>
-                <div class="ttt" >
-                    <div><h3>Tic Tac Toe</h3></div>
-                    <div><img src="images/temp.jpg" alt="" class="img-fluid"></div>
-                </div>
-                <div class="artstore">
-                    <div><img src="images/temp.jpg" alt="" class="img-fluid"></div>
-                    <div><h3>Art Store</h3></div>
-                </div>
-                <div class="simulation">
-                    <div><h3>Simulation</h3> </div>
-                    <div><img src="images/temp.jpg" alt="" class="img-fluid"></div>
-                </div>
-            </div>
-        </div>
-
+            </nav>
            
+            <article >
+                <header>
+                    <h1>Life's a Journey</h1>
+                    <p>Here's Mine</p>
+                </header> 
+                <img src="" alt="">
+            </article>
+
+            <article class="about">
+                <section class="information">
+                    <h1>Nice to Meet You</h1>
+                    <img class="img-fluid" src="images/pictureofme.jpeg" alt="Picture of Me"
+                    style="border-radius: 1em; max-height: 75vh;">
+ 
+                    <p>
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab dolores ratione rerum 
+                        temporibus magni, aut iure quo voluptatem ea. Enim repellendus, unde cupiditate assumenda
+                        facilis omnis illo officiis laudantium quia.
+                    </p>
+                </section> 
+            </article>
+
+            <article class="skills">
+                <header>
+                    <h1>What do I know?</h1>
+                    <p>I'm always learning new skills</p>
+                </header>
+
+                <ul class="skill-list">
+                    <li>Java</li>
+                    <li>Photoshop</li>
+                    <li>C</li>
+                    <li>Django</li>
+                    <li>Illustrator</li>
+                    <li>Python</li>
+                    <li>HTML/CSS</li>
+                </ul>
+            </article>
+
+            <article class="recent">
+                <h1>Recent Work</h1>
+
+                <section class="recent-project">
+                    <header>
+                        <h2>Tic Tac Toe</h2>
+                        <p>Java</p>
+                    </header>
+                    <img src="#" alt="">
+                    <a href="https://github.com/19radleriley/Unbeatable-Tic-Tac-Toe"><button class="btn btn-outline-dark">VIEW PROJECT</button></a>
+                </section>
+
+                <section class="recent-project">
+                    <header>
+                        <h2>Art Store</h2>
+                        <p>Python, Django, HTML/CSS</p>
+                    </header>
+                    <img src="#" alt="">
+                    <a href="https://github.com/19radleriley/ArtSite-SourceCode"><button class="btn btn-outline-dark">VIEW PROJECT</button></a>
+                </section>
+
+                <section class="recent-project">
+                    <header>
+                        <h2>Simulation</h2>
+                        <p>Java, Desmo-J</p>
+                    </header>
+                    <img src="#" alt="">
+                    <a href="https://github.com/19radleriley/AutoBodyShopSimulation"><button class="btn btn-outline-dark">VIEW PROJECT</button> </a>
+                </section>
+            </article>
+        </div>
     </body>
 
-    <footer style="border: 1px solid blue; text-align: center;">
+    <footer style="text-align: center;">
         <a href="#">Contact</a>
         <a href="#">GitHub</a>
         <a href="#">ArtStation</a>
     </footer>
+
+    <!-- Links to JS files -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </html>

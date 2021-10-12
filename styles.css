@@ -5,13 +5,30 @@
 }
 
 body {
-    width: 70%;
+    width: 80vw;
     margin: auto;
     background-color: #f5f7fb;    
 }
 
+h1 {
+    font-size: 3em;
+}
+
+button {
+    border-radius: 2.5em;
+    font-size: x-small;
+    padding: 1.5em 5em 1.5em 5em;
+    border: none;
+    color: white;
+    font-weight:700;
+    font-family: 'Montserrat';
+
+    /* FIXME LATER */
+    background: linear-gradient(to right, #9fdd99 , #25d5b8);
+}
+
 .container > div {
-    margin: 2em;
+    margin: 0 0 40vh 0;
 }
 
 /* Header */
@@ -28,22 +45,49 @@ body {
 }
 
 .information {
-    display: flex;
     grid-column: 2/3;
-}
-
-.img-col {
-    max-width: 40%;
+    text-align: center;
 }
 
 /* Skills section */
+.skill-title {
+    text-align: center;
+}
 
+.skill-list {
+    display: grid;
+    grid-template-columns: 20% 1fr 1fr 1fr 20%;
+    text-align: center;
+}
+
+.skill-list h4 {
+    padding: 1em;
+    border-radius: .75em;
+    background-color: white;
+    margin: 1em 0;
+}
+
+.col1 {
+    grid-column: 2/3;
+    padding-top: 20%;
+    margin-right: 1em;
+}
+
+.col2 {
+    grid-column: 3/4;
+}
+
+.col3 {
+    grid-column: 4/5;
+    padding-top: 20%;
+    margin-left: 1em;
+}
 
 /* Recent work section */
 
-.recent {
+/* .recent {
     text-align: center;
-}
+} */
 
 .recent > div {
     display: grid;
@@ -53,17 +97,16 @@ body {
     border-radius: .5em;
 }
 
-.ttt {
-
+.project-text {
+    width: 60%;
+    margin: auto;
+    align-self: center;
 }
 
-.artstore {
-
-}
-
-.simulation {
-
-}
 
 
 /* Footer */
+
+footer {
+    height: 20vh;
+}

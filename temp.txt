@@ -11,6 +11,9 @@ FOR ABOUT ME
 - Hover effect on my picture that changes the picture to me waving
 - I SHOULD DO A PHOTOSHOOT FOR MYSELF NOW THAT I KNOW HOW TO USE PHOTOSHOP
 
+TODO: 
+- Make the skill list stay in center of screen when resizing screen 
+
 
 FOR FOOTER
 - Have something similar to the header but with less going on 
