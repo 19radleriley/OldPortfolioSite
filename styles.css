@@ -1,112 +1,251 @@
-* {
-    padding: none;
-    margin: none;
-    box-sizing: border-box;
+:root {
+    --background1: #f0f0f0;
+    --background2: white;
+    --foreground: black;
+
+    --main-transition: all .25s;
 }
+
+/* ====================================================================== 
+                            General styles
+ ====================================================================== */
 
 body {
-    width: 80vw;
-    margin: auto;
-    background-color: #f5f7fb;    
+    background-color: var(--background1);
 }
 
-h1 {
+li {
+    list-style: none;
+}
+
+/* ====================================================================== 
+                            Navbar styles
+ ====================================================================== */
+
+ nav {
+    position: fixed;
+    right: 2em;
+    top: 2em;
+}
+
+nav > ul > li {
+    font-size: 1.5em;
+    color: var(--foreground);
+    transition: var(--main-transition);
+}
+
+nav > ul > li > a {
+    color: var(--foreground);
+    transition: var(--main-transition); 
+}
+
+nav > ul > li:hover {
+    transform: scale(1.1);
+}
+
+/* ====================================================================== 
+                            Banner styles
+ ====================================================================== */
+
+.banner {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    padding-bottom: 5em; /* Centers the header better */
+}
+
+.banner > header > h1 {
+    font-size: 5em;
+}
+
+.banner > header > p {
     font-size: 3em;
 }
 
-button {
-    border-radius: 2.5em;
-    font-size: x-small;
-    padding: 1.5em 5em 1.5em 5em;
-    border: none;
-    color: white;
-    font-weight:700;
-    font-family: 'Montserrat';
+/* ====================================================================== 
+                            About styles
+ ====================================================================== */
 
-    /* FIXME LATER */
-    background: linear-gradient(to right, #9fdd99 , #25d5b8);
-}
+ .about > div {
+     background-color: var(--background2);
+     padding: 0;
+     border-radius: .5em;
+     box-shadow: 5px 5px 1em gray;
+     transition: var(--main-transition);
+ }
 
-.container > div {
-    margin: 0 0 40vh 0;
-}
+ .about > div > header {
+     display: flex;
+     padding: 1em;
+     border-radius: .5em .5em 0 0;
+     background-color: var(--foreground);
+ }
 
-/* Header */
+ .about > div > header > img {
+     flex: 1;
+     height: auto;
+     width: 5em;
+     border-radius: 50%;
+     transition: var(--main-transition);
+ }
 
-.illustration {
-    height: 100vh;
-}
+ .about > div > header > h1 {
+     flex: 3;
+     margin: .25em;
+     font-size: 5vw;
+     color: var(--background1);
+     border-bottom: 1px solid var(--background1);
+ }
 
-/* About me section */
+ .about > div > header > img:hover {
+     transform: rotate(5deg);
+ }
 
-.about {
-    display: grid;
-    grid-template-columns: 20% 1fr 20%;
-}
+ .about > div:hover {
+     box-shadow: 5px 5px 2em gray;
+     transform: scale(1.01);
+ }
 
-.information {
-    grid-column: 2/3;
-    text-align: center;
-}
+ /* ====================================================================== 
+                            Skills styles
+ ====================================================================== */
 
-/* Skills section */
-.skill-title {
-    text-align: center;
-}
+.skills {
+    margin-top: 10vh;
+ }
 
-.skill-list {
-    display: grid;
-    grid-template-columns: 20% 1fr 1fr 1fr 20%;
-    text-align: center;
-}
-
-.skill-list h4 {
-    padding: 1em;
-    border-radius: .75em;
-    background-color: white;
-    margin: 1em 0;
-}
-
-.col1 {
-    grid-column: 2/3;
-    padding-top: 20%;
-    margin-right: 1em;
-}
-
-.col2 {
-    grid-column: 3/4;
-}
-
-.col3 {
-    grid-column: 4/5;
-    padding-top: 20%;
-    margin-left: 1em;
-}
-
-/* Recent work section */
-
-/* .recent {
-    text-align: center;
-} */
-
-.recent > div {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    margin: 2em;
-    background-color: white;
+ .skills > div {
+    box-shadow: 5px 5px 1em gray;
     border-radius: .5em;
-}
+    background-color: var(--background2);
+    transition: var(--main-transition);
+ }
 
-.project-text {
-    width: 60%;
-    margin: auto;
-    align-self: center;
-}
+ .skills header {
+     padding: 3em 2em !important;
+ }
+
+ .skills header > h1 {
+     font-size: 3em;
+     border-bottom: 1px solid var(--foreground);
+ }
+
+ .skills header > p {
+     font-size: 1.5em;
+ }
+
+ .skills ul {
+    margin: 0;
+    display: grid;
+    padding: 1em;
+    text-align: center;
+    grid-template-columns: 1fr 1fr 1fr;
+    border-radius: .5em 0 0 .5em;
+    background-color: var(--foreground);
+    color: var(--background1);
+ }
+
+ .skills ul > li {
+     align-self: center;
+     margin: .35em;
+     font-size: 1.5em;
+     font-style: italic;
+     border-radius: .25em;
+     transition: var(--main-transition);
+ }
+
+ .skills > div:hover {
+    box-shadow: 5px 5px 2em gray;
+    transform: scale(1.01); 
+ }
+
+ .skills ul > li:hover {
+    background-color: var(--background1);
+    color: var(--foreground);
+    cursor: default;
+ }
 
 
+ /* ====================================================================== 
+                            Recent styles
+ ====================================================================== */ 
 
-/* Footer */
+ .recent {
+    margin-top: 10vh;
+ }
 
-footer {
-    height: 20vh;
-}
+ .recent header {
+     color: var(--background1);
+     background-color: var(--foreground);
+     border-radius: .5em;
+     margin-bottom: 5vh;
+     box-shadow: 5px 5px 1em gray;
+     transition: var(--main-transition);
+ }
+
+ .recent header > h1 {
+     font-size: 3em;
+ }
+
+ .recent .recent-project {
+    display: flex;
+    padding: 1em;
+    margin-bottom: 5vh;
+    border-radius: .5em;
+    background-color: var(--background2);
+    box-shadow: 5px 5px 1em gray;
+    transition: var(--main-transition);
+ }
+
+ .recent .recent-project > div:first-child {
+     flex: 3;
+ }
+
+ .recent .recent-project > div:last-child {
+    flex: 1;
+    text-align: right;
+ }
+
+ .recent .recent-project h2 {
+     font-size: 3em;
+     border-bottom: 1px solid var(--foreground);
+ }
+
+ .recent .recent-project .project-info {
+     display: flex;
+ }
+
+ .recent .recent-project ul {
+     padding: 0 1em 0 0;
+     margin-right: 1em;
+     border-right: 1px solid var(--foreground);
+ }
+
+ .recent .recent-project li {
+     list-style: circle;
+     margin-left: 2em;
+ }
+
+ .recent .recent-project a {
+     padding: .35em;
+     color: var(--foreground);
+     text-decoration: none;
+     border-radius: .25em;
+     border: 1px solid var(--foreground);
+     transition: var(--main-transition);
+ }
+
+ .recent .recent-project a > i {
+     padding-right: 5px;
+ }
+
+ .recent .recent-project:hover, .recent header:hover {
+    box-shadow: 5px 5px 2em gray;
+    transform: scale(1.01); 
+    cursor: default;
+ }
+
+ .recent .recent-project a:hover {
+     background-color: var(--foreground);
+     color: var(--background1);
+ }
