@@ -96,8 +96,8 @@ nav > ul > li:hover {
 
  .about > div > header > img {
      flex: 1;
-     height: auto;
-     width: 5em;
+     height: 100%;
+     width: 100%;
      border: var(--border);
      border-radius: 50%;
      transition: var(--main-transition);
@@ -106,7 +106,7 @@ nav > ul > li:hover {
  .about > div > header > h1 {
      flex: 3;
      margin: .25em;
-     font-size: 5vw;
+     font-size: 5em;
      color: var(--font2);
      border-bottom: 1px solid var(--font2);
  }
