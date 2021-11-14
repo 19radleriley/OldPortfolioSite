@@ -12,6 +12,7 @@
 
 body {
     background-color: var(--background1);
+    color: var(--foreground);
 }
 
 li {
@@ -37,6 +38,7 @@ nav > ul > li {
 nav > ul > li > a {
     color: var(--foreground);
     transition: var(--main-transition); 
+    cursor: pointer;
 }
 
 nav > ul > li:hover {
