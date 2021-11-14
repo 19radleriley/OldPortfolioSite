@@ -1,7 +1,13 @@
-:root {
-    --background1: #f0f0f0;
-    --background2: white;
-    --foreground: black;
+@import url('https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz&display=swap');:root {
+
+    --background: #f0f0f0;
+    --card1: white;
+    --card2: rgb(27, 27, 27);
+    --font1: rgb(27, 27, 27);
+    --font2: #f0f0f0;
+    --border: none;
+    --box-shadow: 5px 5px 1em gray;
+    --box-shadow-hover: 5px 5px 2em gray;
 
     --main-transition: all .25s;
 }
@@ -11,8 +17,11 @@
  ====================================================================== */
 
 body {
-    background-color: var(--background1);
-    color: var(--foreground);
+    background-color: var(--background);
+    color: var(--font1);
+    font-family: "Yanone Kaffeesatz", sans-serif;
+    font-size: 120%;
+
 }
 
 li {
@@ -31,12 +40,12 @@ li {
 
 nav > ul > li {
     font-size: 1.5em;
-    color: var(--foreground);
+    color: var(--font1);
     transition: var(--main-transition);
 }
 
 nav > ul > li > a {
-    color: var(--foreground);
+    color: var(--font1);
     transition: var(--main-transition); 
     cursor: pointer;
 }
@@ -69,24 +78,27 @@ nav > ul > li:hover {
  ====================================================================== */
 
  .about > div {
-     background-color: var(--background2);
+     background-color: var(--card1);
      padding: 0;
      border-radius: .5em;
-     box-shadow: 5px 5px 1em gray;
+     box-shadow: var(--box-shadow);
+     border: var(--border);
      transition: var(--main-transition);
  }
 
  .about > div > header {
      display: flex;
      padding: 1em;
+     border: var(--border);
      border-radius: .5em .5em 0 0;
-     background-color: var(--foreground);
+     background-color: var(--card2);
  }
 
  .about > div > header > img {
      flex: 1;
      height: auto;
      width: 5em;
+     border: var(--border);
      border-radius: 50%;
      transition: var(--main-transition);
  }
@@ -95,8 +107,12 @@ nav > ul > li:hover {
      flex: 3;
      margin: .25em;
      font-size: 5vw;
-     color: var(--background1);
-     border-bottom: 1px solid var(--background1);
+     color: var(--font2);
+     border-bottom: 1px solid var(--font2);
+ }
+
+ .about > div > section.info > ul > li {
+     list-style: circle;
  }
 
  .about > div > header > img:hover {
@@ -104,7 +120,7 @@ nav > ul > li:hover {
  }
 
  .about > div:hover {
-     box-shadow: 5px 5px 2em gray;
+     box-shadow: var(--box-shadow-hover);
      transform: scale(1.01);
  }
 
@@ -117,9 +133,10 @@ nav > ul > li:hover {
  }
 
  .skills > div {
-    box-shadow: 5px 5px 1em gray;
+    box-shadow: var(--box-shadow);
+    border: var(--border);
     border-radius: .5em;
-    background-color: var(--background2);
+    background-color: var(--card1);
     transition: var(--main-transition);
  }
 
@@ -129,7 +146,7 @@ nav > ul > li:hover {
 
  .skills header > h1 {
      font-size: 3em;
-     border-bottom: 1px solid var(--foreground);
+     border-bottom: 1px solid var(--font1);
  }
 
  .skills header > p {
@@ -143,8 +160,9 @@ nav > ul > li:hover {
     text-align: center;
     grid-template-columns: 1fr 1fr 1fr;
     border-radius: .5em 0 0 .5em;
-    background-color: var(--foreground);
-    color: var(--background1);
+    border: var(--border);
+    background-color: var(--card2);
+    color: var(--font2);
  }
 
  .skills ul > li {
@@ -157,15 +175,16 @@ nav > ul > li:hover {
  }
 
  .skills > div:hover {
-    box-shadow: 5px 5px 2em gray;
+    box-shadow: var(--box-shadow-hover);
     transform: scale(1.01); 
+    cursor: default;
  }
 
  .skills ul > li:hover {
-    background-color: var(--background1);
-    color: var(--foreground);
-    cursor: default;
- }
+    background-color: var(--card1);
+    color: var(--font1);
+    cursor: pointer;
+  }
 
 
  /* ====================================================================== 
@@ -177,11 +196,12 @@ nav > ul > li:hover {
  }
 
  .recent header {
-     color: var(--background1);
-     background-color: var(--foreground);
+     color: var(--font2);
+     background-color: var(--card2);
+     border: var(--border);
      border-radius: .5em;
      margin-bottom: 5vh;
-     box-shadow: 5px 5px 1em gray;
+     box-shadow: var(--box-shadow);
      transition: var(--main-transition);
  }
 
@@ -193,9 +213,10 @@ nav > ul > li:hover {
     display: flex;
     padding: 1em;
     margin-bottom: 5vh;
+    border: var(--border);
     border-radius: .5em;
-    background-color: var(--background2);
-    box-shadow: 5px 5px 1em gray;
+    background-color: var(--card1);
+    box-shadow: var(--box-shadow);
     transition: var(--main-transition);
  }
 
@@ -210,7 +231,7 @@ nav > ul > li:hover {
 
  .recent .recent-project h2 {
      font-size: 3em;
-     border-bottom: 1px solid var(--foreground);
+     border-bottom: 1px solid var(--font1);
  }
 
  .recent .recent-project .project-info {
@@ -220,7 +241,7 @@ nav > ul > li:hover {
  .recent .recent-project ul {
      padding: 0 1em 0 0;
      margin-right: 1em;
-     border-right: 1px solid var(--foreground);
+     border-right: 1px solid var(--font1);
  }
 
  .recent .recent-project li {
@@ -230,10 +251,10 @@ nav > ul > li:hover {
 
  .recent .recent-project a {
      padding: .35em;
-     color: var(--foreground);
+     color: var(--font1);
      text-decoration: none;
      border-radius: .25em;
-     border: 1px solid var(--foreground);
+     border: 1px solid var(--font1);
      transition: var(--main-transition);
  }
 
@@ -242,12 +263,12 @@ nav > ul > li:hover {
  }
 
  .recent .recent-project:hover, .recent header:hover {
-    box-shadow: 5px 5px 2em gray;
+    box-shadow: var(--box-shadow-hover);
     transform: scale(1.01); 
     cursor: default;
  }
 
  .recent .recent-project a:hover {
-     background-color: var(--foreground);
-     color: var(--background1);
+     background-color: var(--card2);
+     color: var(--font2);
  }
