@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz&display=swap');:root {
 
+    --electric-green: rgb(26, 197, 140);
     --background: #f0f0f0;
     --card1: white;
     --card2: rgb(27, 27, 27);
@@ -18,10 +19,11 @@
 
 body {
     background-color: var(--background);
+    /* background-image: url('images/PortfolioBackgroundpsd.png');
+    background-size: 100%; */
     color: var(--font1);
     font-family: "Yanone Kaffeesatz", sans-serif;
     font-size: 120%;
-
 }
 
 li {
@@ -39,20 +41,65 @@ li {
 }
 
 nav > ul > li {
+    position: relative;
     font-size: 1.5em;
     color: var(--font1);
     transition: var(--main-transition);
+    text-align: center;
 }
 
-nav > ul > li > a {
+nav > ul > li > a, nav > ul i {
     color: var(--font1);
     transition: var(--main-transition); 
     cursor: pointer;
+ }
+
+nav > ul a:hover, nav > ul i:hover {
+    color: var(--electric-green);
+    transform: scale(1.1);
+    cursor: pointer;
 }
 
-nav > ul > li:hover {
-    transform: scale(1.1);
+/* Attempt to change have fly out states */
+
+nav .flyout::before {
+    position: absolute;
+    transform: scaleX(0%);
+    transform-origin: right;
+    transition: transform .25s ease;
 }
+
+nav li:hover .flyout::before {
+    transform: scaleX(100%);
+}
+
+.contact::before {
+    content: "Contact";
+    left: -275%;
+    bottom: 0;
+}
+.github::before {
+    content: "GitHub";
+    left: -240%;
+    bottom: 0;
+}
+.linkedin::before {
+    content: "Linkedin";
+    left: -280%;
+    bottom: 0;
+}
+.artstation::before {
+    content: "ArtStation";
+    left: -350%;
+    bottom: 0;
+}
+.theme::before {
+    content: "Theme";
+    left: -225%;
+    bottom: 0;
+}
+
+
 
 /* ====================================================================== 
                             Banner styles
@@ -90,6 +137,7 @@ nav > ul > li:hover {
      display: flex;
      padding: 1em;
      border: var(--border);
+     border-bottom: 5px solid var(--electric-green);
      border-radius: .5em .5em 0 0;
      background-color: var(--card2);
  }
@@ -106,9 +154,10 @@ nav > ul > li:hover {
  .about > div > header > h1 {
      flex: 3;
      margin: .25em;
-     font-size: 5em;
+     /* font-size: 5em; */
+     font-size: clamp(2em, 1em + 10vw, 5em);
      color: var(--font2);
-     border-bottom: 1px solid var(--font2);
+     border-bottom: 3px solid var(--font2);
  }
 
  .about > div > section.info > ul > li {
@@ -142,11 +191,12 @@ nav > ul > li:hover {
 
  .skills header {
      padding: 3em 2em !important;
+     border-left: 5px solid var(--electric-green);
  }
 
  .skills header > h1 {
      font-size: 3em;
-     border-bottom: 1px solid var(--font1);
+     border-bottom: 3px solid var(--electric-green);
  }
 
  .skills header > p {
@@ -161,6 +211,7 @@ nav > ul > li:hover {
     grid-template-columns: 1fr 1fr 1fr;
     border-radius: .5em 0 0 .5em;
     border: var(--border);
+    border-right: none;
     background-color: var(--card2);
     color: var(--font2);
  }
@@ -211,6 +262,7 @@ nav > ul > li:hover {
 
  .recent .recent-project {
     display: flex;
+    position: relative;
     padding: 1em;
     margin-bottom: 5vh;
     border: var(--border);
@@ -232,6 +284,7 @@ nav > ul > li:hover {
  .recent .recent-project h2 {
      font-size: 3em;
      border-bottom: 1px solid var(--font1);
+     transition: var(--main-transition);
  }
 
  .recent .recent-project .project-info {
@@ -242,6 +295,7 @@ nav > ul > li:hover {
      padding: 0 1em 0 0;
      margin-right: 1em;
      border-right: 1px solid var(--font1);
+     transition: var(--main-transition);
  }
 
  .recent .recent-project li {
@@ -250,16 +304,15 @@ nav > ul > li:hover {
  }
 
  .recent .recent-project a {
-     padding: .35em;
+     position: absolute;
+     top: 1rem;
+     right: 1rem;
+     border-bottom: 3px solid var(--card1);
+     font-size: 1.5rem;
+     line-height: 85%;
      color: var(--font1);
      text-decoration: none;
-     border-radius: .25em;
-     border: 1px solid var(--font1);
      transition: var(--main-transition);
- }
-
- .recent .recent-project a > i {
-     padding-right: 5px;
  }
 
  .recent .recent-project:hover, .recent header:hover {
@@ -269,6 +322,6 @@ nav > ul > li:hover {
  }
 
  .recent .recent-project a:hover {
-     background-color: var(--card2);
-     color: var(--font2);
+     color: var(--electric-green);
+     border-bottom: 3px solid var(--electric-green);
  }

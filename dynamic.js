@@ -32,7 +32,7 @@ function changeTheme()
         document.documentElement.style.setProperty("--card2", "transparent");
         document.documentElement.style.setProperty("--font1", "#f0f0f0");
         document.documentElement.style.setProperty("--font2", "#f0f0f0");
-        document.documentElement.style.setProperty("--border", "1px solid #f0f0f0");
+        document.documentElement.style.setProperty("--border", "2px solid #f0f0f0");
         document.documentElement.style.setProperty("--box-shadow", "none");
         document.documentElement.style.setProperty("--box-shadow-hover", "none");
     }
