@@ -126,7 +126,6 @@ function addSkills() {
 }
 
 function investigateSkill(event) {
-    console.log(event);
     let skill = event.srcElement.getAttribute("name");
     let newHeader = document.getElementById(skill);
     let currentHeader = document.querySelector('.skills header[data-visible="true"]')

@@ -261,6 +261,10 @@ nav li:hover .flyout::before {
      transition: var(--main-transition);
  }
 
+ .skills header[id] > * {
+     animation: fade 1s forwards;
+ }
+
  .skills:hover {
     box-shadow: var(--box-shadow-hover);
     transform: scale(1.01); 
@@ -274,7 +278,14 @@ nav li:hover .flyout::before {
     cursor: pointer;
   }
 
-
+  @keyframes fade {
+     from {
+         opacity: 0%;
+     } 
+     to {
+         opacity: 100%;
+     }
+  }
  /* ====================================================================== 
                             Recent styles
  ====================================================================== */ 
