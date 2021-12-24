@@ -10,6 +10,9 @@
     --box-shadow: 5px 5px 1em gray;
     --box-shadow-hover: 5px 5px 2em gray;
 
+    --nav-spacing: .35em;
+    --card-padding: 1em;
+
     --main-transition: all .25s;
 }
 
@@ -17,7 +20,15 @@
                             General styles
  ====================================================================== */
 
+ * {
+    /* Global whitespace reset */
+    padding: 0;
+    margin: 0;
+ }
+
 body {
+    width: clamp(30em, 50vw, 60em);
+    margin: auto;
     background-color: var(--background);
     /* background-image: url('images/PortfolioBackgroundpsd.png');
     background-size: 100%; */
@@ -28,6 +39,14 @@ body {
 
 li {
     list-style: none;
+}
+
+*[data-visible="true"] {
+    display: block;
+}
+
+*[data-visible="false"] {
+    display: none;
 }
 
 /* ====================================================================== 
@@ -42,10 +61,11 @@ li {
 
 nav > ul > li {
     position: relative;
+    padding-bottom: var(--nav-spacing);
     font-size: 1.5em;
+    text-align: center;
     color: var(--font1);
     transition: var(--main-transition);
-    text-align: center;
 }
 
 nav > ul > li > a, nav > ul i {
@@ -60,10 +80,11 @@ nav > ul a:hover, nav > ul i:hover {
     cursor: pointer;
 }
 
-/* Attempt to change have fly out states */
+/* Set fly out states for nav */
 
 nav .flyout::before {
     position: absolute;
+    padding-bottom: var(--nav-spacing);
     transform: scaleX(0%);
     transform-origin: right;
     transition: transform .25s ease;
@@ -99,8 +120,6 @@ nav li:hover .flyout::before {
     bottom: 0;
 }
 
-
-
 /* ====================================================================== 
                             Banner styles
  ====================================================================== */
@@ -110,39 +129,40 @@ nav li:hover .flyout::before {
     display: flex;
     align-items: center;
     padding-bottom: 5em; /* Centers the header better */
+    margin-left: 1em;
 }
 
 .banner > header > h1 {
-    font-size: 5em;
+    font-size: clamp(3em, 7vw, 5em);
 }
 
 .banner > header > p {
-    font-size: 3em;
+    font-size: clamp(2em, 5vw, 4em);
 }
 
 /* ====================================================================== 
                             About styles
  ====================================================================== */
 
- .about > div {
+ .about {
+     margin: 1em;
      background-color: var(--card1);
-     padding: 0;
      border-radius: .5em;
      box-shadow: var(--box-shadow);
      border: var(--border);
      transition: var(--main-transition);
  }
 
- .about > div > header {
+ .about header {
      display: flex;
-     padding: 1em;
+     padding: var(--card-padding);
      border: var(--border);
      border-bottom: 5px solid var(--electric-green);
      border-radius: .5em .5em 0 0;
      background-color: var(--card2);
  }
 
- .about > div > header > img {
+ .about header > img {
      flex: 1;
      height: 100%;
      width: 100%;
@@ -151,24 +171,39 @@ nav li:hover .flyout::before {
      transition: var(--main-transition);
  }
 
- .about > div > header > h1 {
+ .about header > h1 {
      flex: 3;
+     align-self: center;
+     width: fit-content;
+     padding-bottom: 0;
      margin: .25em;
-     /* font-size: 5em; */
      font-size: clamp(2em, 1em + 10vw, 5em);
      color: var(--font2);
      border-bottom: 3px solid var(--font2);
  }
 
- .about > div > section.info > ul > li {
-     list-style: circle;
+ .about section.info {
+     padding: var(--card-padding);
  }
 
- .about > div > header > img:hover {
+ .about section.info > * {
+     line-height: 150%;
+ }
+
+ .about section p, .about section ul {
+     margin-bottom: .5em;
+ }
+
+ .about section.info > ul > li {
+     list-style: circle;
+     margin-left: 1.5em;
+ }
+
+ .about header > img:hover {
      transform: rotate(5deg);
  }
 
- .about > div:hover {
+ .about:hover {
      box-shadow: var(--box-shadow-hover);
      transform: scale(1.01);
  }
@@ -177,11 +212,10 @@ nav li:hover .flyout::before {
                             Skills styles
  ====================================================================== */
 
-.skills {
+ .skills {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     margin-top: 10vh;
- }
-
- .skills > div {
     box-shadow: var(--box-shadow);
     border: var(--border);
     border-radius: .5em;
@@ -201,6 +235,7 @@ nav li:hover .flyout::before {
 
  .skills header > p {
      font-size: 1.5em;
+     line-height: 150%;
  }
 
  .skills ul {
@@ -218,6 +253,7 @@ nav li:hover .flyout::before {
 
  .skills ul > li {
      align-self: center;
+     padding: .15em;
      margin: .35em;
      font-size: 1.5em;
      font-style: italic;
@@ -225,15 +261,16 @@ nav li:hover .flyout::before {
      transition: var(--main-transition);
  }
 
- .skills > div:hover {
+ .skills:hover {
     box-shadow: var(--box-shadow-hover);
     transform: scale(1.01); 
     cursor: default;
  }
 
  .skills ul > li:hover {
-    background-color: var(--card1);
-    color: var(--font1);
+    background-color: #f0f0f0;
+    /* color: rgb(27, 27, 27); */
+    color: var(--electric-green);
     cursor: pointer;
   }
 
@@ -247,23 +284,29 @@ nav li:hover .flyout::before {
  }
 
  .recent header {
-     color: var(--font2);
-     background-color: var(--card2);
-     border: var(--border);
-     border-radius: .5em;
-     margin-bottom: 5vh;
-     box-shadow: var(--box-shadow);
-     transition: var(--main-transition);
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5vh;
  }
 
  .recent header > h1 {
-     font-size: 3em;
+    width: fit-content;
+    padding: .25em;
+    background-color: var(--card2);
+    color: var(--font2);
+    font-size: 3em;
+    border: var(--border);
+    border-radius: .25em;
+    box-shadow: var(--box-shadow);
+    transition: var(--main-transition);
  }
 
  .recent .recent-project {
     display: flex;
     position: relative;
-    padding: 1em;
+    width: 75%;
+    padding: var(--card-padding);
+    margin: auto;
     margin-bottom: 5vh;
     border: var(--border);
     border-radius: .5em;
@@ -274,11 +317,6 @@ nav li:hover .flyout::before {
 
  .recent .recent-project > div:first-child {
      flex: 3;
- }
-
- .recent .recent-project > div:last-child {
-    flex: 1;
-    text-align: right;
  }
 
  .recent .recent-project h2 {
@@ -292,7 +330,7 @@ nav li:hover .flyout::before {
  }
 
  .recent .recent-project ul {
-     padding: 0 1em 0 0;
+     padding: .5em 1em 0 0;
      margin-right: 1em;
      border-right: 1px solid var(--font1);
      transition: var(--main-transition);
@@ -301,6 +339,10 @@ nav li:hover .flyout::before {
  .recent .recent-project li {
      list-style: circle;
      margin-left: 2em;
+ }
+
+ .recent-project p {
+     padding-top: .5em;
  }
 
  .recent .recent-project a {
@@ -315,7 +357,7 @@ nav li:hover .flyout::before {
      transition: var(--main-transition);
  }
 
- .recent .recent-project:hover, .recent header:hover {
+ .recent .recent-project:hover, .recent header h1:hover {
     box-shadow: var(--box-shadow-hover);
     transform: scale(1.01); 
     cursor: default;
@@ -325,3 +367,98 @@ nav li:hover .flyout::before {
      color: var(--electric-green);
      border-bottom: 3px solid var(--electric-green);
  }
+
+ /* ====================================================================== 
+                            Contact styles
+ ====================================================================== */ 
+
+ .contact-page {
+     position: relative;
+     width: 75%;
+     margin: 10vh auto;
+     border-radius: .5em;
+     background-color: var(--card1);
+     box-shadow: var(--box-shadow);
+     transition: var(--main-transition);
+ }
+
+ .contact-page header {
+    padding: var(--card-padding);
+    border: var(--border);
+    border-bottom: 5px solid var(--electric-green);
+    border-radius: .5em .5em 0 0;
+    background-color: var(--card2); 
+    color: var(--font2);
+    text-align: center;
+}
+
+.contact-page form {
+    padding: var(--card-padding);
+    overflow: hidden;
+    border: var(--border);
+    border-top: none;
+    border-radius: 0 0 .5em .5em;
+}
+
+.contact-page form > * {
+    display: block;
+    width: 100%;
+    margin: 1em 0;
+    padding: .5em;
+    resize: none;
+    color: var(--font1);
+}
+
+.contact-page form input,
+.contact-page form textarea {
+    background-color: transparent;
+    border: 1px solid var(--font1);
+    border-radius: .15em;
+    font-family: sans-serif;
+    font-size: 1.15rem;
+}
+
+.contact-page input[type="submit"] {
+    background-color: var(--electric-green);
+    color: var(--font2);
+    font-family: "Yanone Kaffeesatz", sans-serif;
+    font-size: 1.75rem;
+    border: none;
+    border-radius: .15em;
+    transition: var(--main-transition);
+}
+
+.contact-page #contact-back {
+    position: absolute;
+    top: -7px;
+    right: -7px;
+    font-size: 1.75rem;
+    color: var(--electric-green);
+    background-color: rgb(27, 27, 27);
+    border-radius: 50%;
+    transition: var(--main-transition);
+}
+
+.contact-page input[type="submit"]:hover {
+    cursor: pointer;
+    transform: scale(1.01);
+}
+
+.contact-page input[type="submit"]:active { 
+    transform: scale(.99);
+}
+
+.contact-page:hover {
+    box-shadow: var(--box-shadow-hover);
+    transform: scale(1.01);
+}
+
+.contact-page #contact-back:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+
+.contact-page #contact-back:active {
+    transform: scale(.9);
+}

@@ -1,0 +1,173 @@
+<!-- style="border: 1px solid purple" -->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Link in Custom CSS -->
+        <link rel="stylesheet" href="../css/main.css">
+        <script src="../js/main.js"></script>
+        <script src="https://kit.fontawesome.com/55b918ce29.js" crossorigin="anonymous"></script>
+
+        <title>Riley Radle</title>
+    </head>
+
+    <body>
+
+        <nav>
+            <ul>
+                <li><span class="flyout contact"></span><a href="#"><i class="fas fa-envelope"></i></a></li>
+                <li><span class="flyout github"></span><a href="https://github.com/19radleriley"><i class="fab fa-github"></i></a></li>
+                <li><span class="flyout linkedin"></span><a href="https://www.linkedin.com/in/rileyradle/"><i class="fab fa-linkedin"></i></a></li>
+                <li><span class="flyout artstation"></span><a href="https://www.artstation.com/radle2279"><i class="fab fa-artstation"></i></a></li>
+                <!-- Make this flip the color scheme from light to dark when we learn javascript -->
+                <li><span class="flyout theme"></span><i class="fas fa-lightbulb"></i></li>
+            </ul>
+        </nav>
+
+        <main data-visible="true">
+            <article class="banner">
+                <header>
+                    <h1>Life is like a Skechbook</h1>
+                    <p>Here's Mine</p>
+                </header> 
+            </article>
+
+            <article class="about">
+                <header>
+                    <img class="" src="../images/pictureofme.jpeg" alt="Picture of Me">
+                    <h1>Riley Radle</h1>
+                </header>
+                <section class="info">
+                    <h2>Small Town, Big Dreams</h2>
+                    <p>
+                        I grew up in a rural Wisconsin town named Arkansaw.  In 2019 I graduated as <b>valedictorian</b>
+                        from Durand High School (about 40 minutes outside of Eau Claire).  I was a three sport athlete (running 
+                        cross-country/track, playing basketball, and baseball) but I also liked to keep involved in school clubs as well.
+                    </p>
+                    <h2>Interests</h2>
+                    <ul>
+                        <li>Computer Graphics</li>
+                        <li>Animation</li>
+                        <li>Digital Art</li>
+                        <li>Web Development</li>
+                        <li>Drawing</li>
+                    </ul>
+                    <h2>Where am I at?</h2>
+                    <p>
+                        Currently, I am in my third year at the University of Wisconsin-La Crosse moving toward a Bachelor's degree 
+                        in computer science. Some of my favorite classes have been <b>Simulation</b>, <b>Artificial Intelligence</b>, and <b>Web Development</b>
+                        My minor is Art where I primarily focus on <b>digital design</b> and <b>drawing</b> classes.
+                    </p>
+                    <p>
+                        I also love to keep active outside of the classroom! I am heavily involved in the 'CODERS' and 'Students for Sustainability' clubs on campus.
+                        These provide great outlets for community outreach as well as opportunities to meet fellow students in other departments.  My love for sports has 
+                        definitely not left me either.  You can always finding me playing in at least one intramural or preparing for an upcoming race!
+                    </p>
+                </section>
+            </article>
+
+            <article class="skills">
+                <ul class="skill-list">
+                    <!-- Added using JS -->
+                </ul>
+
+                <header data-visible="true">
+                    <h1>What do I know?</h1>
+                    <p>I'm always learning new skills</p>
+                </header>
+            </article>
+
+            <article class="recent">
+                <header class="">
+                    <h1>Recent Work</h1>
+                </header>
+
+                <section class="recent-project">
+                    <div>
+                        <h2>Event-Planner</h2>
+                        <div class="project-info">
+                            <ul>Technologies used:
+                                <li>HTML/CSS</li>
+                                <li>JS/EJS</li>
+                            </ul>
+                            <p>Super intense description</p>
+                        </div>
+                    </div>
+                    <div>
+                        <a href="https://github.com/19radleriley/Event-Planner-Scheduler"></i>View Project</a>
+                    </div>
+                </section>
+
+                <section class="recent-project">
+                    <div>
+                        <h2>Tic Tac Toe</h2>
+                        <div class="project-info">
+                            <ul>Technologies used:
+                                <li>Java</li>
+                            </ul>
+                            <p>Super intense description</p>
+                        </div>
+                    </div>
+                    <div>
+                        <a href="https://github.com/19radleriley/Unbeatable-Tic-Tac-Toe"></i>View Project</a>
+                    </div>
+                </section>
+
+                <section class="recent-project">
+                    <div>
+                        <h2>Art Store</h2>
+                        <div class="project-info">
+                            <ul>Technologies used:
+                                <li>Python</li>
+                                <li>Django</li>
+                                <li>HTML/CSS</li>
+                            </ul>
+                            <p>Super intense description</p>
+                        </div>
+                    </div>
+                    <div>
+                        <a href="https://github.com/19radleriley/ArtSite-SourceCode"></i>View Project</a>
+                    </div>                       
+                </section>
+
+                <section class="recent-project">
+                    <div>
+                        <h2>Simulation</h2>
+                        <div class="project-info">
+                            <ul>Technologies used:
+                                <li>Java</li>
+                                <li>Desmo-J</li>
+                            </ul>
+                            <p>Super intense description</p>
+                        </div>
+                    </div>
+                    <div>
+                        <a href="https://github.com/19radleriley/AutoBodyShopSimulation"></i>View Project</a>
+                    </div>
+                </section>            
+            </article>
+        </main>
+
+        <div class="contact-page" data-visible="false">
+            <i class="fas fa-times-circle" id="contact-back"></i>
+            <header>
+                <h1>Contact Me</h1>
+            </header>
+            <form action="#">
+                <input required placeholder="Email" type="email" name="" id="">
+                <input required placeholder="Subject" type="text" name="" id="">
+                <textarea required placeholder="Body" name="" id="" cols="50" rows="5"></textarea>
+                <input type="submit" value="Send" id="contact-send">
+            </form>
+        </div>
+       
+    </body>
+
+    <footer style="text-align: center;" data-visible="true">
+        &copy Riley Radle 2021
+    </footer>
+
+    <!-- Links to JS files -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</html>
