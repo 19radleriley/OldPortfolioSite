@@ -85,7 +85,6 @@ nav > ul > li > a, nav > ul i {
 
 nav > ul a:hover, nav > ul i:hover {
     color: var(--electric-green);
-    transform: scale(1.1);
     cursor: pointer;
 }
 
@@ -238,12 +237,12 @@ nav li:hover .flyout::before {
  }
 
  .skills header > h1 {
-     font-size: 3em;
+     font-size: clamp(1.75em, 3vw, 4em);
      border-bottom: 3px solid var(--electric-green);
  }
 
  .skills header > p {
-     font-size: 1.5em;
+     font-size: clamp(1.25rem, 2vw, 2.5rem);
      line-height: 150%;
  }
 
@@ -262,9 +261,10 @@ nav li:hover .flyout::before {
 
  .skills ul > li {
      align-self: center;
-     padding: .15em;
+     padding: clamp(.1em, .5vw, .2em);
      margin: .35em;
-     font-size: 1.5em;
+     font-size: .35em;
+     font-size: clamp(1em, 2vw, 1.5em);
      font-style: italic;
      border-radius: .25em;
      transition: var(--main-transition);
@@ -281,9 +281,8 @@ nav li:hover .flyout::before {
  }
 
  .skills ul > li:hover {
-    background-color: #f0f0f0;
-    /* color: rgb(27, 27, 27); */
     color: var(--electric-green);
+    background-color: var(--font2);
     cursor: pointer;
   }
 
@@ -333,6 +332,8 @@ nav li:hover .flyout::before {
     background-color: var(--card1);
     box-shadow: var(--box-shadow);
     transition: var(--main-transition);
+    text-decoration: none;
+    color: var(--font1);
  }
 
  .recent .recent-project > div:first-child {
@@ -365,7 +366,7 @@ nav li:hover .flyout::before {
      padding-top: .5em;
  }
 
- .recent .recent-project a {
+ .recent .recent-project b {
      position: absolute;
      top: 1rem;
      right: 1rem;
@@ -380,10 +381,19 @@ nav li:hover .flyout::before {
  .recent .recent-project:hover, .recent header h1:hover {
     box-shadow: var(--box-shadow-hover);
     transform: var(--scale-hover); 
-    cursor: default;
+    border-color: var(--electric-green);
+    cursor: pointer;
  }
 
- .recent .recent-project a:hover {
+ .recent .recent-project:hover h2 {
+     border-bottom-color: var(--electric-green);
+ }
+
+ .recent .recent-project:hover ul {
+    border-right-color: var(--electric-green);
+}
+
+ .recent .recent-project:hover b {
      color: var(--electric-green);
      border-bottom: 3px solid var(--electric-green);
  }
