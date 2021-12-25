@@ -1,0 +1,60 @@
+/* ====================================================================== 
+                            Navbar styles
+ ====================================================================== */
+
+@media (max-width: 55em) {
+ 
+    /* Turn off most hover animations for mobile */
+    :root {
+        --box-shadow-hover: none;
+        --scale-hover: none;
+    }
+
+    nav {
+        padding: 1em;
+        border: 3px solid var(--background2);
+        border-radius: .5em;
+        background-color: var(--background);
+    }
+
+    nav[in="true"] {
+        transform: translateX(6em);
+    }
+
+    nav[in="false"] {
+        transform: none;
+    }
+
+    .nav-toggler {
+        display: inline;
+        position: absolute;
+        top: 2%;
+        left: -68%;
+        padding: .5em;
+        z-index: -1;
+        border: 3px solid var(--background2);
+        border-right: none;
+        border-radius: .5em 0 0 .5em;
+        background-color: var(--background);
+        font-size: 1.5rem;
+    }
+
+    .nav-toggler i {
+        transition: var(--main-transition);
+    }
+
+    .nav-toggler:hover {
+        cursor: pointer;
+        color: var(--electric-green);
+    }
+
+    .nav-toggler[in="false"] i {
+        transform: rotate(540deg);
+    }
+
+    /* Turn off the flyout states for mobile */
+
+    nav .flyout::before {
+        content: "";
+    }
+}

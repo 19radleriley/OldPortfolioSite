@@ -1,7 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz&display=swap');:root {
+@import url('https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz&display=swap');
 
+:root {
     --electric-green: rgb(26, 197, 140);
     --background: #f0f0f0;
+    --background2: rgb(27, 27, 27);
     --card1: white;
     --card2: rgb(27, 27, 27);
     --font1: rgb(27, 27, 27);
@@ -9,6 +11,8 @@
     --border: none;
     --box-shadow: 5px 5px 1em gray;
     --box-shadow-hover: 5px 5px 2em gray;
+
+    --scale-hover: scale(1.01);
 
     --nav-spacing: .35em;
     --card-padding: 1em;
@@ -57,6 +61,11 @@ li {
     position: fixed;
     right: 2em;
     top: 2em;
+    transition: var(--main-transition);
+}
+
+.nav-toggler {
+    display: none;
 }
 
 nav > ul > li {
@@ -128,16 +137,16 @@ nav li:hover .flyout::before {
     height: 100vh;
     display: flex;
     align-items: center;
-    padding-bottom: 5em; /* Centers the header better */
+    padding-bottom: 5em; 
     margin-left: 1em;
 }
 
 .banner > header > h1 {
-    font-size: clamp(3em, 7vw, 5em);
+    font-size: clamp(3em, 6vw, 7em);
 }
 
 .banner > header > p {
-    font-size: clamp(2em, 5vw, 4em);
+    font-size: clamp(2em, 5vw, 5em);
 }
 
 /* ====================================================================== 
@@ -177,7 +186,7 @@ nav li:hover .flyout::before {
      width: fit-content;
      padding-bottom: 0;
      margin: .25em;
-     font-size: clamp(2em, 1em + 10vw, 5em);
+     font-size: clamp(4em, 8vw, 7em);
      color: var(--font2);
      border-bottom: 3px solid var(--font2);
  }
@@ -205,7 +214,7 @@ nav li:hover .flyout::before {
 
  .about:hover {
      box-shadow: var(--box-shadow-hover);
-     transform: scale(1.01);
+     transform: var(--scale-hover);
  }
 
  /* ====================================================================== 
@@ -215,7 +224,7 @@ nav li:hover .flyout::before {
  .skills {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    margin-top: 10vh;
+    margin: 10vh 1em;
     box-shadow: var(--box-shadow);
     border: var(--border);
     border-radius: .5em;
@@ -267,7 +276,7 @@ nav li:hover .flyout::before {
 
  .skills:hover {
     box-shadow: var(--box-shadow-hover);
-    transform: scale(1.01); 
+    transform: var(--scale-hover); 
     cursor: default;
  }
 
@@ -370,7 +379,7 @@ nav li:hover .flyout::before {
 
  .recent .recent-project:hover, .recent header h1:hover {
     box-shadow: var(--box-shadow-hover);
-    transform: scale(1.01); 
+    transform: var(--scale-hover); 
     cursor: default;
  }
 
@@ -452,7 +461,7 @@ nav li:hover .flyout::before {
 
 .contact-page input[type="submit"]:hover {
     cursor: pointer;
-    transform: scale(1.01);
+    transform: var(--scale-hover);
 }
 
 .contact-page input[type="submit"]:active { 
@@ -461,7 +470,7 @@ nav li:hover .flyout::before {
 
 .contact-page:hover {
     box-shadow: var(--box-shadow-hover);
-    transform: scale(1.01);
+    transform: var(--scale-hover);
 }
 
 .contact-page #contact-back:hover {

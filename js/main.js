@@ -8,6 +8,7 @@ function start(event) {
 
     document.querySelector(".fa-lightbulb").addEventListener("click", toggleTheme);
     document.querySelector(".fa-envelope").addEventListener("click", toggleContact); 
+    document.querySelector(".nav-toggler").addEventListener("click", toggleNav);
     document.getElementById("contact-back").addEventListener("click", toggleContact);
     document.getElementById("contact-send").addEventListener("click", sendEmail);
 }
@@ -35,6 +36,20 @@ function toggleContact() {
     }
 }
 
+function toggleNav() {
+    let navToggler = document.querySelector("span.nav-toggler");
+    let nav = document.querySelector("nav");
+    
+    if (navToggler.getAttribute("in") == "true") {
+        navToggler.setAttribute("in", "false");
+        nav.setAttribute("in", "false");
+    }
+    else {
+        navToggler.setAttribute("in", "true");
+        nav.setAttribute("in", "true");
+    }
+}
+
 function initTheme() 
 {
     let currentTheme = sessionStorage.getItem("currentTheme");
@@ -43,6 +58,7 @@ function initTheme()
     if (currentTheme == "light")
     {
         document.documentElement.style.setProperty("--background", "#f0f0f0");
+        document.documentElement.style.setProperty("--background2", "rgb(27, 27, 27)");
         document.documentElement.style.setProperty("--card1", "white");
         document.documentElement.style.setProperty("--card2", "rgb(27, 27, 27)");
         document.documentElement.style.setProperty("--font1", "rgb(27, 27, 27)");
@@ -56,6 +72,7 @@ function initTheme()
     else 
     {
         document.documentElement.style.setProperty("--background", "rgb(27, 27, 27)");
+        document.documentElement.style.setProperty("--background2", "#f0f0f0");
         document.documentElement.style.setProperty("--card1", "transparent");
         document.documentElement.style.setProperty("--card2", "transparent");
         document.documentElement.style.setProperty("--font1", "#f0f0f0");
@@ -74,6 +91,7 @@ function toggleTheme() {
     if (currentTheme == "dark")
     {
         document.documentElement.style.setProperty("--background", "#f0f0f0");
+        document.documentElement.style.setProperty("--background2", "rgb(27, 27, 27)");
         document.documentElement.style.setProperty("--card1", "white");
         document.documentElement.style.setProperty("--card2", "rgb(27, 27, 27)");
         document.documentElement.style.setProperty("--font1", "rgb(27, 27, 27)");
@@ -87,6 +105,7 @@ function toggleTheme() {
     else 
     {
         document.documentElement.style.setProperty("--background", "rgb(27, 27, 27)");
+        document.documentElement.style.setProperty("--background2", "#f0f0f0");
         document.documentElement.style.setProperty("--card1", "transparent");
         document.documentElement.style.setProperty("--card2", "transparent");
         document.documentElement.style.setProperty("--font1", "#f0f0f0");
