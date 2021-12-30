@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", start);
 function start(event) {
     initTheme();
     addSkills();
+    addRecentProjects();
 
     document.querySelector(".fa-lightbulb").addEventListener("click", toggleTheme);
     document.querySelector(".fa-envelope").addEventListener("click", toggleContact); 
@@ -187,6 +188,74 @@ let skills = [
     {"name": "CSS", "level": "80"},
     {"name": "JS", "level": "60"},
 ]
+
+let recentProjects = [
+    {
+        "name" : "Event-Planner",
+        "tech" : ["HTML/CSS", "JS/EJS"], 
+        "description" : 'This is a web app designed for a local non-profit "Aptiv".  It has following functionalities: create / log into user accounts, view and "volunteer" for upcoming events, "donate" to upcoming events, and "donate" to the Aptiv organization',
+        "link" : "https://github.com/19radleriley/Event-Planner-Scheduler"
+    },
+    {
+        "name" : "Tic Tac Toe",
+        "tech" : ["Java"], 
+        "description" : "This is single/double player tic tac toe engine.  It uses some simple AI to allow for the user to play on multiple difficuties. The graphics were made with JSwing library.",
+        "link" : "https://github.com/19radleriley/Unbeatable-Tic-Tac-Toe"
+    },
+    {
+        "name" : "Art Store",
+        "tech" : ["Django", "Python", "HTML/CSS"], 
+        "description" : 'This is an art store I created to hypothetically promote my art. Users can browse the store, add items to their cart, and "checkout".',
+        "link" : "https://github.com/19radleriley/ArtSite-SourceCode"
+    },
+    {
+        "name" : "Simulation",
+        "tech" : ["Java", "Desmo-J"], 
+        "description" : "This is a simple simuation I made after taking a course on simulation in Spring 2021.  It simulates an auto-body shop and explores the optimal number of workers and car stalls to maximize the profits of the shop.",
+        "link" : "https://github.com/19radleriley/AutoBodyShopSimulation"
+    }
+];
+
+function addRecentProjects() {
+    let recentContainer = document.querySelector("article.recent");
+
+    recentProjects.forEach(project => {
+        let container = document.createElement("div");
+
+        let a = document.createElement("a");
+        a.setAttribute("class", "recent-project");
+        a.setAttribute("href", project["link"]);
+
+        let h2 = document.createElement("h2");
+        h2.appendChild(document.createTextNode(project["name"]));
+
+        let info = document.createElement("div");
+        info.setAttribute("class", "project-info");
+
+        let ul = document.createElement("ul");
+        ul.appendChild(document.createTextNode("Technologies: "));
+
+        project["tech"].forEach(tech => {
+            let li = document.createElement("li");
+            li.appendChild(document.createTextNode(tech));
+            ul.appendChild(li);
+        });
+        let description = document.createElement("p");
+        description.appendChild(document.createTextNode(project["description"]));
+
+        let b = document.createElement("b");
+        b.appendChild(document.createTextNode("View Project"));
+
+        // Add all of the content to the container
+        recentContainer.appendChild(a);
+        a.appendChild(container);
+        container.appendChild(h2);
+        container.appendChild(info);
+        info.appendChild(ul);
+        info.appendChild(description);
+        a.appendChild(b);
+    });
+}
 
 
 

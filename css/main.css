@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz&display=swap');
 
+/* FIXME: Recent cards appear above nav at small screen sizes */
+
 :root {
     --electric-green: rgb(26, 197, 140);
     --background: #f0f0f0;
@@ -145,7 +147,7 @@ nav li:hover .flyout::before {
 }
 
 .banner > header > p {
-    font-size: clamp(2em, 5vw, 5em);
+    font-size: clamp(2em, 5vw, 3.5em);
 }
 
 /* ====================================================================== 
@@ -359,11 +361,12 @@ nav li:hover .flyout::before {
 
  .recent .recent-project li {
      list-style: circle;
-     margin-left: 2em;
+     margin-left: 1em;
  }
 
  .recent-project p {
      padding-top: .5em;
+     line-height: 110%;
  }
 
  .recent .recent-project b {
@@ -381,6 +384,13 @@ nav li:hover .flyout::before {
  .recent .recent-project:hover, .recent header h1:hover {
     box-shadow: var(--box-shadow-hover);
     transform: var(--scale-hover); 
+ }
+
+ .recent header h1:hover {
+     cursor: default;
+ }
+
+ .recent .recent-project:hover {
     border-color: var(--electric-green);
     cursor: pointer;
  }
