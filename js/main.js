@@ -67,6 +67,7 @@ function initTheme()
         document.documentElement.style.setProperty("--border", "none");
         document.documentElement.style.setProperty("--box-shadow", "5px 5px 1em gray");
         document.documentElement.style.setProperty("--box-shadow-hover", "5px 5px 2em gray");
+        document.documentElement.style.setProperty("--background-img", "url('../images/PortfolioBackgroundLight.png')")
         sessionStorage.setItem("currentTheme", "light");
     }
     // Initialize to dark mode
@@ -74,13 +75,14 @@ function initTheme()
     {
         document.documentElement.style.setProperty("--background", "rgb(27, 27, 27)");
         document.documentElement.style.setProperty("--background2", "#f0f0f0");
-        document.documentElement.style.setProperty("--card1", "transparent");
-        document.documentElement.style.setProperty("--card2", "transparent");
+        document.documentElement.style.setProperty("--card1", "rgb(27, 27, 27)");
+        document.documentElement.style.setProperty("--card2", "rgb(27, 27, 27)");
         document.documentElement.style.setProperty("--font1", "#f0f0f0");
         document.documentElement.style.setProperty("--font2", "#f0f0f0");
         document.documentElement.style.setProperty("--border", "2px solid #f0f0f0");
         document.documentElement.style.setProperty("--box-shadow", "none");
         document.documentElement.style.setProperty("--box-shadow-hover", "none");
+        document.documentElement.style.setProperty("--background-img", "url('../images/PortfolioBackgroundDark.png')")
         sessionStorage.setItem("currentTheme", "dark")
     }
 }
@@ -100,6 +102,7 @@ function toggleTheme() {
         document.documentElement.style.setProperty("--border", "none");
         document.documentElement.style.setProperty("--box-shadow", "5px 5px 1em gray");
         document.documentElement.style.setProperty("--box-shadow-hover", "5px 5px 2em gray");
+        document.documentElement.style.setProperty("--background-img", "url('../images/PortfolioBackgroundLight.png')")
         sessionStorage.setItem("currentTheme", "light");
     }
     // Change to dark mode
@@ -107,13 +110,14 @@ function toggleTheme() {
     {
         document.documentElement.style.setProperty("--background", "rgb(27, 27, 27)");
         document.documentElement.style.setProperty("--background2", "#f0f0f0");
-        document.documentElement.style.setProperty("--card1", "transparent");
-        document.documentElement.style.setProperty("--card2", "transparent");
+        document.documentElement.style.setProperty("--card1", "rgb(27, 27, 27)");
+        document.documentElement.style.setProperty("--card2", "rgb(27, 27, 27)");
         document.documentElement.style.setProperty("--font1", "#f0f0f0");
         document.documentElement.style.setProperty("--font2", "#f0f0f0");
         document.documentElement.style.setProperty("--border", "2px solid #f0f0f0");
         document.documentElement.style.setProperty("--box-shadow", "none");
         document.documentElement.style.setProperty("--box-shadow-hover", "none");
+        document.documentElement.style.setProperty("--background-img", "url('../images/PortfolioBackgroundDark.png')")
         sessionStorage.setItem("currentTheme", "dark")
     } 
 }

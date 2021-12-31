@@ -20,6 +20,8 @@
     --card-padding: 1em;
 
     --main-transition: all .25s;
+
+    --background-img: url("../images/PortfolioBackgroundDark.png")
 }
 
 /* ====================================================================== 
@@ -36,8 +38,8 @@ body {
     width: clamp(30em, 50vw, 60em);
     margin: auto;
     background-color: var(--background);
-    /* background-image: url('images/PortfolioBackgroundpsd.png');
-    background-size: 100%; */
+    background-image: var(--background-img);
+    background-size: 100%;
     color: var(--font1);
     font-family: "Yanone Kaffeesatz", sans-serif;
     font-size: 120%;
