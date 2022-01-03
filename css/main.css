@@ -17,7 +17,7 @@
     --scale-hover: scale(1.01);
 
     --nav-spacing: .35em;
-    --card-padding: 1em;
+    --card-padding: clamp(1em, 1vw, 2em);
 
     --main-transition: all .25s;
 
@@ -35,7 +35,7 @@
  }
 
 body {
-    width: clamp(30em, 50vw, 60em);
+    width: clamp(30em, 60vw, 80em);
     margin: auto;
     background-color: var(--background);
     background-image: var(--background-img);
@@ -75,7 +75,8 @@ li {
 nav > ul > li {
     position: relative;
     padding-bottom: var(--nav-spacing);
-    font-size: 1.5em;
+    /* font-size: 1.5em; */
+    font-size: clamp(1.5rem, 1.75vw, 2.5rem);
     text-align: center;
     color: var(--font1);
     transition: var(--main-transition);
@@ -202,6 +203,15 @@ nav li:hover .flyout::before {
      line-height: 150%;
  }
 
+ .about section.info > p, 
+ .about section.info > ul {
+     font-size: clamp(1rem, 1.25vw, 2rem);
+ }
+
+ .about section.info > h2 {
+     font-size: clamp(1.5rem, 2.5vw, 10rem);
+ }
+
  .about section p, .about section ul {
      margin-bottom: .5em;
  }
@@ -236,17 +246,17 @@ nav li:hover .flyout::before {
  }
 
  .skills header {
-     padding: 3em 2em !important;
+     padding: 4.5em 2em;
      border-left: 5px solid var(--electric-green);
  }
 
  .skills header > h1 {
-     font-size: clamp(1.75em, 3vw, 4em);
+     font-size: clamp(1.75em, 3.75vw, 5em);
      border-bottom: 3px solid var(--electric-green);
  }
 
  .skills header > p {
-     font-size: clamp(1.25rem, 2vw, 2.5rem);
+     font-size: clamp(1.25rem, 2vw, 3.5rem);
      line-height: 150%;
  }
 
@@ -268,7 +278,7 @@ nav li:hover .flyout::before {
      padding: clamp(.1em, .5vw, .2em);
      margin: .35em;
      font-size: .35em;
-     font-size: clamp(1em, 2vw, 1.5em);
+     font-size: clamp(1em, 2vw, 2em);
      font-style: italic;
      border-radius: .25em;
      transition: var(--main-transition);
@@ -317,7 +327,7 @@ nav li:hover .flyout::before {
     padding: .25em;
     background-color: var(--card2);
     color: var(--font2);
-    font-size: 3em;
+    font-size: clamp(3rem, 4vw, 5.5rem);
     border: var(--border);
     border-radius: .25em;
     box-shadow: var(--box-shadow);
@@ -345,19 +355,20 @@ nav li:hover .flyout::before {
  }
 
  .recent .recent-project h2 {
-     font-size: 3em;
-     border-bottom: 1px solid var(--font1);
+     font-size: clamp(2.75rem, 4vw, 6rem);
+     border-bottom: 2px solid var(--font1);
      transition: var(--main-transition);
  }
 
  .recent .recent-project .project-info {
      display: flex;
+     font-size: clamp(1rem, 1.5vw, 5rem);
  }
 
  .recent .recent-project ul {
      padding: .5em 1em 0 0;
      margin-right: 1em;
-     border-right: 1px solid var(--font1);
+     border-right: 2px solid var(--font1);
      transition: var(--main-transition);
  }
 
@@ -376,7 +387,7 @@ nav li:hover .flyout::before {
      top: 1rem;
      right: 1rem;
      border-bottom: 3px solid var(--card1);
-     font-size: 1.5rem;
+     font-size: clamp(1.5rem, 1.5vw, 2.5rem);
      line-height: 85%;
      color: var(--font1);
      text-decoration: none;

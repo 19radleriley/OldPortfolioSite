@@ -15,6 +15,7 @@ function start(event) {
 }
 
 function sendEmail() {
+
     // TODO
     // Get input and send email to myself
 
@@ -137,11 +138,8 @@ function addSkills() {
 
         let header = document.createElement("header");
         let h1 = document.createElement("h1");
-        // let p = document.createElement("p");
         h1.appendChild(document.createTextNode(skill["name"]));
-        // p.appendChild(document.createTextNode(skill["level"] + "/100"));
         header.appendChild(h1);
-        // header.appendChild(p);
         addSkillBar(header, skill)
         header.setAttribute("data-visible", "false");
         header.setAttribute("id", skill["name"]);
