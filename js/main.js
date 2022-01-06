@@ -195,13 +195,13 @@ let recentProjects = [
     {
         "name" : "Event-Planner",
         "tech" : ["HTML/CSS", "JS/EJS"], 
-        "description" : 'This is a web app designed for a local non-profit "Aptiv".  It has following functionalities: create / log into user accounts, view and "volunteer" for upcoming events, "donate" to upcoming events, and "donate" to the Aptiv organization',
+        "description" : 'This is a web app designed for a local non-profit "Aptiv".  It has the following functionalities: create / log into user accounts, view and "volunteer" for upcoming events, "donate" to upcoming events, and "donate" to the Aptiv organization',
         "link" : "https://github.com/19radleriley/Event-Planner-Scheduler"
     },
     {
         "name" : "Tic Tac Toe",
         "tech" : ["Java"], 
-        "description" : "This is single/double player tic tac toe engine.  It uses some simple AI to allow for the user to play on multiple difficuties. The graphics were made with JSwing library.",
+        "description" : "This is single/double player tic tac toe engine.  It uses some simple AI to allow for the user to play on multiple difficuties. The graphics were made with the JSwing library.",
         "link" : "https://github.com/19radleriley/Unbeatable-Tic-Tac-Toe"
     },
     {
