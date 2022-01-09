@@ -1,12 +1,14 @@
-
+// Offset this script until all of the HTML content is loaded
 document.addEventListener("DOMContentLoaded", start);
 
 // Start the flow of the page
 function start(event) {
+    // Set up information
     initTheme();
     addSkills();
     addRecentProjects();
 
+    // Add event listeners 
     document.querySelector(".fa-lightbulb").addEventListener("click", toggleTheme);
     document.querySelector(".fa-envelope").addEventListener("click", toggleContact); 
     document.querySelector(".nav-toggler").addEventListener("click", toggleNav);
@@ -14,9 +16,33 @@ function start(event) {
     document.getElementById("contact-send").addEventListener("click", sendEmail);
 }
 
+/* 
+ * This function controls the behavior of the navbar
+ * at smaller screen sizes by hiding or showing it.
+ */
+function toggleNav() {
+    let navToggler = document.querySelector("span.nav-toggler");
+    let nav = document.querySelector("nav");
+    
+    if (navToggler.getAttribute("in") == "true") {
+        navToggler.setAttribute("in", "false");
+        nav.setAttribute("in", "false");
+    }
+    else {
+        navToggler.setAttribute("in", "true");
+        nav.setAttribute("in", "true");
+    }
+}
+
+/* ========== Section for emailing and contacting me ========== */
+
+
+/* 
+ * This function uses a resource called emailjs to 
+ * allow emails to be sent directly from an html form.
+ */
 function sendEmail() {
 
-    // TODO
     let emailInfo = {
         from_email: document.getElementById("email").value,
         subject: document.getElementById("subject").value,
@@ -39,6 +65,9 @@ function sendEmail() {
     }
 }
 
+/* 
+ * This function shows / hides the contact / email card.
+ */
 function toggleContact() {
     let contactVisible =  document.querySelector(".contact-page").getAttribute("data-visible");
 
@@ -54,20 +83,12 @@ function toggleContact() {
     }
 }
 
-function toggleNav() {
-    let navToggler = document.querySelector("span.nav-toggler");
-    let nav = document.querySelector("nav");
-    
-    if (navToggler.getAttribute("in") == "true") {
-        navToggler.setAttribute("in", "false");
-        nav.setAttribute("in", "false");
-    }
-    else {
-        navToggler.setAttribute("in", "true");
-        nav.setAttribute("in", "true");
-    }
-}
+/* ========== Section for influencing the theme of the site ========== */
 
+/* 
+ * This function initializes the theme of the page when it is loaded.
+ * It determines this based on the session content of the browser.
+ */
 function initTheme() 
 {
     let currentTheme = sessionStorage.getItem("currentTheme");
@@ -104,6 +125,10 @@ function initTheme()
     }
 }
 
+/* 
+ * This function toggles the theme of the page from light to 
+ * dark and vice versa.
+ */
 function toggleTheme() {
     let currentTheme = sessionStorage.getItem("currentTheme");
 
@@ -139,62 +164,9 @@ function toggleTheme() {
     } 
 }
 
-function addSkills() {
-    let skillList = document.querySelector(".skill-list");
-    let skillsArticle = document.querySelector(".skills");
+/* ========== Section for adding content to page ========== */
 
-    skills.forEach(skill => {
-        let li = document.createElement("li");
-        li.setAttribute("name", skill["name"]);
-        li.setAttribute("level", skill["level"]);
-        li.appendChild(document.createTextNode(skill["name"]));
-        skillList.appendChild(li);
-
-        li.addEventListener("click", investigateSkill);
-
-        let header = document.createElement("header");
-        let h1 = document.createElement("h1");
-        h1.appendChild(document.createTextNode(skill["name"]));
-        header.appendChild(h1);
-        addSkillBar(header, skill)
-        header.setAttribute("data-visible", "false");
-        header.setAttribute("id", skill["name"]);
-        skillsArticle.appendChild(header);
-    });
-}
-
-function investigateSkill(event) {
-    let skill = event.srcElement.getAttribute("name");
-    let newHeader = document.getElementById(skill);
-    let currentHeader = document.querySelector('.skills header[data-visible="true"]')
-    currentHeader.setAttribute("data-visible", "false");
-    newHeader.setAttribute("data-visible", "true");
-}
-
-function addSkillBar(header, skill) {
-    let container = document.createElement("div");
-    container.setAttribute("style", "width: 100%; height: 25%; margin: .5em 0;")
-    let outer = document.createElement("div");
-    let inner = document.createElement("div");
-    header.appendChild(container);
-
-    outer.setAttribute("style", 
-        "width: 50%; height: 100%;" +
-        "border: 1px solid rgb(26, 197, 140);" +
-        "border-radius: .25em"
-    );
-
-    container.appendChild(outer);
-
-    inner.setAttribute("style", 
-        "width: " + skill["level"] + "%; height: 100%;" +
-        "background-color: rgb(26, 197, 140);"
-    );
-
-    outer.appendChild(inner);
-}
-
-
+// List of skill objects
 let skills = [
     {"name": "Java", "level": "90"},
     {"name": "Photoshop", "level": "80"},
@@ -207,6 +179,7 @@ let skills = [
     {"name": "JS", "level": "60"},
 ]
 
+// List of recent project objects
 let recentProjects = [
     {
         "name" : "Event-Planner",
@@ -234,6 +207,75 @@ let recentProjects = [
     }
 ];
 
+/* 
+ * This function adds the skill objects to the DOM
+ */
+function addSkills() {
+    let skillList = document.querySelector(".skill-list");
+    let skillsArticle = document.querySelector(".skills");
+
+    skills.forEach(skill => {
+        let li = document.createElement("li");
+        li.setAttribute("name", skill["name"]);
+        li.setAttribute("level", skill["level"]);
+        li.appendChild(document.createTextNode(skill["name"]));
+        skillList.appendChild(li);
+
+        li.addEventListener("click", investigateSkill);
+
+        let header = document.createElement("header");
+        let h1 = document.createElement("h1");
+        h1.appendChild(document.createTextNode(skill["name"]));
+        header.appendChild(h1);
+        addSkillBar(header, skill)
+        header.setAttribute("data-visible", "false");
+        header.setAttribute("id", skill["name"]);
+        skillsArticle.appendChild(header);
+    });
+}
+
+/* 
+ * This function displays more information about 
+ * a particular skill when it is clicked
+ */
+function investigateSkill(event) {
+    let skill = event.srcElement.getAttribute("name");
+    let newHeader = document.getElementById(skill);
+    let currentHeader = document.querySelector('.skills header[data-visible="true"]')
+    currentHeader.setAttribute("data-visible", "false");
+    newHeader.setAttribute("data-visible", "true");
+}
+
+/* 
+ * This function adds a 'skill' bar to visually 
+ * display my knowledge of that skill
+ */
+function addSkillBar(header, skill) {
+    let container = document.createElement("div");
+    container.setAttribute("style", "width: 100%; height: 25%; margin: .5em 0;")
+    let outer = document.createElement("div");
+    let inner = document.createElement("div");
+    header.appendChild(container);
+
+    outer.setAttribute("style", 
+        "width: 50%; height: 100%;" +
+        "border: 1px solid rgb(26, 197, 140);" +
+        "border-radius: .25em"
+    );
+
+    container.appendChild(outer);
+
+    inner.setAttribute("style", 
+        "width: " + skill["level"] + "%; height: 100%;" +
+        "background-color: rgb(26, 197, 140);"
+    );
+
+    outer.appendChild(inner);
+}
+
+/* 
+ * This function adds the recent project objects to the DOM
+ */
 function addRecentProjects() {
     let recentContainer = document.querySelector("article.recent");
 

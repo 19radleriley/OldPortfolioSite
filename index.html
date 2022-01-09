@@ -1,4 +1,3 @@
-<!-- style="border: 1px solid purple" -->
 <html>
     <head>
         <meta charset="utf-8">
@@ -12,6 +11,8 @@
         <!-- Link in Scripts -->
         <script src="js/main.js"></script>
         <script src="https://kit.fontawesome.com/55b918ce29.js" crossorigin="anonymous"></script>
+
+        <!-- These scripts allow for emails to be sent from the site! -->
         <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
         <script type="text/javascript">
             (function() {
@@ -23,6 +24,7 @@
 
     <body>
 
+        <!-- Nav section => 'in' refers to the navbar being hidden off the screen or to be showing -->
         <nav in="true">
             <span class="nav-toggler" in="true"><i class="fas fa-chevron-left"></i></span>
             <ul>
@@ -30,12 +32,16 @@
                 <li><span class="flyout github"></span><a href="https://github.com/19radleriley"><i class="fab fa-github"></i></a></li>
                 <li><span class="flyout linkedin"></span><a href="https://www.linkedin.com/in/rileyradle/"><i class="fab fa-linkedin"></i></a></li>
                 <li><span class="flyout artstation"></span><a href="https://www.artstation.com/radle2279"><i class="fab fa-artstation"></i></a></li>
-                <!-- Make this flip the color scheme from light to dark when we learn javascript -->
+
+                <!-- Toggles the theme of the site from light to dark -->
                 <li><span class="flyout theme"></span><i class="fas fa-lightbulb"></i></li>
             </ul>
         </nav>
 
+        <!-- Main content for the site -->
         <main data-visible="true">
+
+            <!-- Banner / call to action -->
             <article class="banner">
                 <header>
                     <h1>Life is like a Skechbook</h1>
@@ -43,6 +49,7 @@
                 </header> 
             </article>
 
+            <!-- About me section -->
             <article class="about">
                 <header>
                     <img class="" src="images/Me.jpg" alt="Picture of Me">
@@ -77,6 +84,7 @@
                 </section>
             </article>
 
+            <!-- Skills section -->
             <article class="skills">
                 <ul class="skill-list">
                     <!-- Added using JS -->
@@ -88,6 +96,7 @@
                 </header>
             </article>
 
+            <!-- Recent work section -->
             <article class="recent">
                 <header>
                     <h1>Recent Work</h1>
@@ -98,6 +107,7 @@
             </article>
         </main>
 
+        <!-- Contact page with working email functionality -->
         <div class="contact-page" data-visible="false">
             <i class="fas fa-times-circle" id="contact-back"></i>
             <header>
@@ -113,9 +123,9 @@
        
     </body>
 
+    <!-- Footer with copyright and link to source code -->
     <footer style="text-align: center;" data-visible="true">
-        &copy Riley Radle 2022
+        <div>&copy Riley Radle 2022</div>
+        <div>View the source code <a href="https://github.com/19radleriley/PortfolioSite">here</a>.</div>
     </footer>
-
-    <!-- Links to JS files -->
 </html>

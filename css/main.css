@@ -2,6 +2,7 @@
 
 /* FIXME: Recent cards appear above nav at small screen sizes */
 
+/* Root properties that are changed to dynamically influence site */
 :root {
     --electric-green: rgb(26, 197, 140);
     --background: #f0f0f0;
@@ -75,7 +76,6 @@ li {
 nav > ul > li {
     position: relative;
     padding-bottom: var(--nav-spacing);
-    /* font-size: 1.5em; */
     font-size: clamp(1.5rem, 1.75vw, 2.5rem);
     text-align: center;
     color: var(--font1);
@@ -524,3 +524,21 @@ input:-webkit-autofill:active  {
     -webkit-box-shadow: 0 0 0 30px var(--card1) inset !important;
     -webkit-text-fill-color: var(--font1) !important;
 }
+
+
+/* ====================================================================== 
+                            Footer styles
+ ====================================================================== */
+
+ footer div{
+     margin-bottom: .25em;
+ }
+
+ footer a {
+     color: var(--font1);
+     transition: var(--main-transition);
+ }
+
+ footer a:hover {
+     color: var(--electric-green);
+ }
