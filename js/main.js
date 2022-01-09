@@ -17,10 +17,26 @@ function start(event) {
 function sendEmail() {
 
     // TODO
-    // Get input and send email to myself
+    let emailInfo = {
+        from_email: document.getElementById("email").value,
+        subject: document.getElementById("subject").value,
+        body: document.getElementById("body").value,
+    } 
 
-    // Toggle the contact off
-    toggleContact();
+    // Make sure the inputs are at lease truthy before proceeding
+    if (emailInfo.from_email && emailInfo.subject && emailInfo.body) {
+        emailjs.send("service_l7dq1vm", "template_ob3dn51", emailInfo)
+        .then(response => {
+            alert("Email sent successfully! Thank you! :)")
+        });
+
+        // Clear the inputs 
+        document.getElementById("email").value = "";
+        document.getElementById("subject").value = "";
+        document.getElementById("body").value = "";
+
+        toggleContact();
+    }
 }
 
 function toggleContact() {

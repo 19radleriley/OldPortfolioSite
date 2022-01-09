@@ -515,3 +515,12 @@ nav li:hover .flyout::before {
 .contact-page #contact-back:active {
     transform: scale(.9);
 }
+
+/* Keeps the color of input from changing when using auto complete */
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active  {
+    -webkit-box-shadow: 0 0 0 30px var(--card1) inset !important;
+    -webkit-text-fill-color: var(--font1) !important;
+}

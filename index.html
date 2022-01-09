@@ -12,7 +12,12 @@
         <!-- Link in Scripts -->
         <script src="js/main.js"></script>
         <script src="https://kit.fontawesome.com/55b918ce29.js" crossorigin="anonymous"></script>
-
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+        <script type="text/javascript">
+            (function() {
+            emailjs.init("user_gxEkd0Dfjx7tARXHR4fsj");
+            })();
+        </script>
         <title>Riley Radle</title>
     </head>
 
@@ -99,14 +104,9 @@
                 <h1>Contact Me</h1>
             </header>
             <form action="#">
-                <input required placeholder="Email" type="email" name="" id="email">
-                <input required placeholder="Subject" type="text" name="" id="subject">
-                <textarea required id="body"
-                    placeholder="NOTE: contact feature not finished yet. 
-
-Email: radle2279@uwlax.edu 
-Phone:(715) 279-2559" 
-                    name="" id="" cols="50" rows="5"></textarea>
+                <input required placeholder="Email" type="email" id="email">
+                <input required placeholder="Subject" type="text" id="subject">
+                <textarea required id="body" placeholder="Body" cols="50" rows="5"></textarea>
                 <input type="submit" value="Send" id="contact-send">
             </form>
         </div>
