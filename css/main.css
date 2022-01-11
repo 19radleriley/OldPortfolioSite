@@ -433,6 +433,7 @@ nav li:hover .flyout::before {
      background-color: var(--card1);
      box-shadow: var(--box-shadow);
      transition: var(--main-transition);
+     animation: fade .5s ease;
  }
 
  .contact-page header {
