@@ -47,7 +47,7 @@ body {
 }
 
 main {
-    animation: fade;
+    animation: fade .5s ease;
 }
 
 li {
