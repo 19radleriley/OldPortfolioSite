@@ -46,6 +46,10 @@ body {
     font-size: 120%;
 }
 
+main {
+    animation: fade;
+}
+
 li {
     list-style: none;
 }
