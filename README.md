@@ -13,5 +13,5 @@ DESCRIPTION:
     
     
 NOTE: 
-* This site is unfinished
-* I will continue to update it as I learn more in my web development class 
+* This site is a work in progress
+* It will continue to be updated as I learn more web development / design
