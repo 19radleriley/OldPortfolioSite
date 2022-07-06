@@ -13,16 +13,48 @@ body {
     font-family: "Yanone Kaffeesatz", sans-serif;
 }
 
+/* ==================================== */
+
+#burger {
+    position: absolute;
+    right: 0;
+    top: 1.5rem;
+    font-size: 2rem;
+}
+
+#burger:hover {
+    cursor: pointer;
+}
+
+#dash-header {
+    position: relative;
+    width: 90%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    padding: 1.5rem 0;
+    gap: 1rem;
+}
+
+#profile-img {
+    max-width: max(5rem, 7vw);
+    border-radius: 50%;
+    outline: 2px solid #1AC58C; 
+}
+
+#name {
+    display: inline;
+    font-size: 4rem;
+}
+
+/* ==================================== */
+
 .widget-title-lg {
     font-size: 3rem;
 }
 
 .widget-title-md {
     font-size: 2rem;
-}
-
-#dash-header {
-    height: 20vh;
 }
 
 #widget-grid {
@@ -32,13 +64,17 @@ body {
     margin: auto;
     gap: 1.5rem;
 
-    outline: 1px solid red;
+    /* outline: 1px solid red; */
 }
 
 .widget {
     padding: 1rem;
     border-radius: 10px;
     background-color: rgba(84, 84, 84, .9);
+}
+
+.widget:hover {
+    cursor: pointer;
 }
 
 #work-experience {
@@ -48,7 +84,7 @@ body {
 #center-widgets {
     grid-column: 4/6;
     display: grid;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 1fr .75fr;
 }
 
 #skills {
@@ -60,6 +96,9 @@ body {
 
 .skill {
     aspect-ratio: 1.75;
+}
+
+#about-me {
 }
 
 #projects {
