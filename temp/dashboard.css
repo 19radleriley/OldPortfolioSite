@@ -71,6 +71,7 @@ body {
     padding: 1rem;
     border-radius: 10px;
     background-color: rgba(84, 84, 84, .9);
+    transition: transform .25s ease;
 }
 
 .widget:hover {
@@ -85,6 +86,7 @@ body {
     grid-column: 4/6;
     display: grid;
     grid-template-rows: 1fr .75fr;
+    transition: transform .25s ease;
 }
 
 #skills {
@@ -92,6 +94,7 @@ body {
     grid-template-columns: 1fr 1fr;
     gap: 1.5rem;
     margin-bottom: 1.5rem;
+    transition: transform .25s ease;
 }
 
 .skill {
@@ -104,6 +107,17 @@ body {
 #projects {
     grid-column: 1/4;
 }
+/* 
+@media (min-width: 65rem) {
+
+    #projects:hover {
+        transform: scale(1.03);
+    }
+
+    #projects:hover ~ div {
+        transform: translateX(10px);
+    } 
+} */
 
 @media (max-width: 65rem) {
     #center-widgets {
