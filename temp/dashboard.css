@@ -49,11 +49,23 @@ body {
 
 /* ==================================== */
 
-.widget-title-lg {
+#img-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.widget-img {
+    max-width: 95%;
+    border-radius: 10px;
+}
+
+.widget-title.lg {
     font-size: 3rem;
 }
 
-.widget-title-md {
+.widget-title.md {
     font-size: 2rem;
 }
 
@@ -106,6 +118,11 @@ body {
 
 #projects {
     grid-column: 1/4;
+}
+
+.widget.lg {
+    display: flex;
+    flex-direction: column;
 }
 /* 
 @media (min-width: 65rem) {
