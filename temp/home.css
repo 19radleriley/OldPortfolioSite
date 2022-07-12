@@ -1,0 +1,41 @@
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-image: url('../images/PortfolioBackgroundDark.png');
+    background-size: 99%;
+    background-color: rgb(26, 27, 27);
+    color: white;
+    font-family: "Yanone Kaffeesatz", sans-serif;
+}
+
+#home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#cta-title {
+    font-size: 6rem;
+}
+
+#cta-subtitle {
+    font-size: 4rem;
+}
+
+#burger {
+    position: absolute;
+    right: 1.5rem;
+    top: 1.5rem;
+    font-size: 2rem;
+    transition: color .25s;
+}
+
+#burger:hover {
+    cursor: pointer;
+    color: #1AC58C;
+}
