@@ -5,11 +5,12 @@
 }
 
 body {
-    background-image: url('../images/PortfolioBackgroundDark.png');
+    background-image: url('../../images/PortfolioBackgroundDark.png');
     background-size: 99%;
     background-color: rgb(26, 27, 27);
     color: white;
     font-family: "Yanone Kaffeesatz", sans-serif;
+    position: relative;
 }
 
 #home {
@@ -21,6 +22,7 @@ body {
 
 #cta-title {
     font-size: 6rem;
+    line-height: 80%;
 }
 
 #cta-subtitle {
@@ -38,4 +40,15 @@ body {
 #burger:hover {
     cursor: pointer;
     color: #1AC58C;
+}
+
+footer {
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 1rem;
+}
+
+@media (max-width: 45rem) {
+
 }

@@ -24,16 +24,33 @@
 
 /* ==================================== */
 
-#img-container {
+#carousel {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-grow: 1;
+    position: relative;
 }
 
+.carousel-list{
+    list-style: none;
+}
+
+.widget-img[data-visible] {
+    opacity: 1;
+}
+
+
+/* can't use position absolute for smaller screen sizes */
 .widget-img {
     max-width: 95%;
     border-radius: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity .5s;
 }
 
 .widget-title.lg {
@@ -99,19 +116,12 @@
     display: flex;
     flex-direction: column;
 }
-/* 
-@media (min-width: 65rem) {
-
-    #projects:hover {
-        transform: scale(1.03);
-    }
-
-    #projects:hover ~ div {
-        transform: translateX(10px);
-    } 
-} */
 
 @media (max-width: 65rem) {
+    #widget-grid {
+        padding-bottom: 5rem;
+    }
+
     #center-widgets {
         grid-row: 2;
     }
@@ -137,6 +147,10 @@
 }
 
 @media (max-width: 45rem) {
+    #widget-grid {
+        padding-bottom: 5rem;
+    }
+
     #center-widgets {
         grid-row: 3;
         color: red;
