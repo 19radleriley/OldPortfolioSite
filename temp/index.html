@@ -7,91 +7,110 @@
         <link href="https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz&display=swap" rel="stylesheet">
 
         <!-- Link in Custom CSS -->
+        <link rel="stylesheet" href="css/global.css">
         <link rel="stylesheet" href="css/home.css">
         <link rel="stylesheet" href="css/dashboard.css">
         <link rel="shortcut icon" href="images/Earth.png" type="image/x-icon">
 
         <!-- Link in Scripts -->
         <script src="js/main.js"></script>
+        <script src="js/navigation.js"></script>
         <script src="js/dashboard-hover-effects.js"></script>
         <script src="js/carousels.js"></script>
         <script src="https://kit.fontawesome.com/55b918ce29.js" crossorigin="anonymous"></script>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
-        <!-- These scripts allow for emails to be sent from the site! -->
-        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-        <script type="text/javascript">
-            (function() {
-                emailjs.init("user_gxEkd0Dfjx7tARXHR4fsj");
-            })();
-        </script>
         <title>Riley Radle</title>
     </head>
 
     <body>
-        <!-- <div id="home">
+        <div id="home">
             <header id="cta-header">
                 <h1 id="cta-title">Life is Like a Sketchbook</h1>
                 <b id="cta-subtitle">Here's <span>Mine</span></b>
+                <button id="to-dashboard">=></button>
             </header>
             <i class="fa-solid fa-bars" id="burger"></i>
-        </div> -->
+        </div>
 
         <nav>
 
         </nav>
 
-        <header id="dash-header">
-            <img id="profile-img" src="../images/Me.jpg" alt="">
-            <h1 id="name">Riley Radle</h1>
-        </header>
+        <div id="dashboard">
+            <header id="dash-header">
+                <img id="profile-img" src="../images/Me.jpg" alt="">
+                <h1 id="name">Riley Radle</h1>
+            </header>
 
-        <div id="widget-grid">
-            <div class="widget lg" id="projects">
-                <h2 class="widget-title lg">Projects</h2>
-                <div id="carousel">
-                    <ul class="carousel-list">
-                        <li>
-                            <img data-visible src="images/TA.png" alt="" class="widget-img 0">
-                        </li>
-                        <li>
-                            <img src="images/FAM.jpg" alt="" class="widget-img 1">
-                        </li>
-                        <li>
-                            <img src="images/TA.png" alt="" class="widget-img 2">
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div id="center-widgets">
-                <div id="skills">
-                    <div class="widget skill" id="skill1">
-                        <h2 class="widget-title sm">Java</h2>
-                    </div>
-                    <div class="widget skill" id="skill2">
-                        <h2 class="widget-title sm">JavaScript</h2>
-                    </div>
-                    <div class="widget skill" id="skill3">
-                        <h2 class="widget-title sm">Photoshop</h2>
-                    </div>
-                    <div class="widget skill" id="skill4">
-                        <h2 class="widget-title sm">View all skills</h2>
-                    </div>
-                </div>
-                <div class="widget lg" id="about-me">
-                    <h2 class="widget-title md">About Me</h2>
+            <div id="widget-grid">
+                <div class="widget lg" id="projects">
+                    <h2 class="widget-title lg">Projects</h2>
                     <div id="carousel">
-                        <img data-visible src="images/FAM.jpg" alt="" class="widget-img">
+                        <ul class="carousel-list">
+                            <li>
+                                <img src="images/TA.png" alt="" class="widget-img n0">
+                            </li>
+                            <li>
+                                <img src="images/TA.png" alt="" class="widget-img n1">
+                            </li>
+                            <li>
+                                <img src="images/TA.png" alt="" class="widget-img n2">
+                            </li>
+                        </ul>
                     </div>
                 </div>
-            </div>
-            <div class="widget lg" id="work-experience">
-                <h2 class="widget-title lg">Work Experience</h2>
-                <div id="carousel">
-                    <img data-visible src="images/MC.jpg" alt="" class="widget-img">
+                <div id="center-widgets">
+                    <div id="skills">
+                        <div class="widget skill" id="skill1">
+                            <h2 class="widget-title sm">Java</h2>
+                        </div>
+                        <div class="widget skill" id="skill2">
+                            <h2 class="widget-title sm">JavaScript</h2>
+                        </div>
+                        <div class="widget skill" id="skill3">
+                            <h2 class="widget-title sm">Photoshop</h2>
+                        </div>
+                        <div class="widget skill" id="skill4">
+                            <h2 class="widget-title sm">View all skills</h2>
+                        </div>
+                    </div>
+                    <div class="widget lg" id="about-me">
+                        <h2 class="widget-title md">About Me</h2>
+                        <div id="carousel">
+                            <ul class="carousel-list">
+                                <li>
+                                    <img data-visible src="images/FAM.jpg" alt="" class="widget-img n0">
+                                </li>
+                                <li>
+                                    <img data-visible src="images/FAM.jpg" alt="" class="widget-img n1">
+                                </li>
+                                <li>
+                                    <img data-visible src="images/FAM.jpg" alt="" class="widget-img n2">
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="widget lg" id="work-experience">
+                    <h2 class="widget-title lg">Work Experience</h2>
+                        <div id="carousel">
+                            <ul class="carousel-list">
+                                <li>
+                                    <img data-visible src="images/MC.png" alt="" class="widget-img n0">
+                                </li>
+                                <li>
+                                    <img data-visible src="images/MC.png" alt="" class="widget-img n1">
+                                </li>
+                                <li>
+                                    <img data-visible src="images/MC.png" alt="" class="widget-img n2">
+                                </li>
+                            </ul>
+                        </div>
                 </div>
             </div>
         </div>
+
     </body>
 
     <!-- Footer with copyright and link to source code -->

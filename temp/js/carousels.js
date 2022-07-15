@@ -1,11 +1,22 @@
-document.addEventListener("DOMContentLoaded", swapImage);
+document.addEventListener("DOMContentLoaded", startCarousels);
 
-function swapImage() {
+function startCarousels() {
+    // Initially show all of the first carousel images
+    $(".widget-img.n0").show();
+
+    swapImage("#projects", 0);
+    swapImage("#about-me", 500);
+    swapImage("#work-experience", 1000);
+}
+
+function swapImage(carousel, delay) {
     let count = 0;
-    setInterval(() => {
-        $("#projects .widget-img." + count).removeAttr('data-visible');
-        count = (count + 1) % 3;
-        $("#projects .widget-img." + count).attr('data-visible', '');
-        console.log(count);
-    }, 5000);
+    setTimeout(() => {
+        setInterval(() => {
+            $(`${carousel} .widget-img.n` + count).fadeOut(500, () => {
+                    count = (count + 1) % 3;
+                    $(`${carousel} .widget-img.n` + count).fadeIn(500);
+                });
+        }, 7500);
+    }, delay)
 }

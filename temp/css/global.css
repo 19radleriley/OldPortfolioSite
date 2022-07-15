@@ -1,0 +1,17 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-image: url('../../images/PortfolioBackgroundDark.png');
+    background-size: 99%;
+    background-color: rgb(26, 27, 27);
+    color: white;
+    font-family: "Yanone Kaffeesatz", sans-serif;
+    position: relative;
+}
+
+#dashboard {
+    display: none;
+}
